@@ -53,7 +53,7 @@ namespace Elsa.Activities.RabbitMq.Services
         {
             if (_bus == null) ConfigureAsOneWayClient();
 
-            await _bus!.Advanced.Topics.Publish(Configuration.RoutingKey, message, Configuration.Headers);
+            await _bus.Advanced.Topics.Publish(Configuration.RoutingKey, message, Configuration.Headers);
         }
 
         public void Dispose()
